@@ -1,42 +1,34 @@
 <template>
   <div id="app">
-    <div class="test">
-      API Project
-     </div>
+    <div class="test">API Project</div>
+    <div class="data-goes-here" v-for=" method in methods" :key="method">Data {{method.api}}</div>
   </div>
 </template>
 
 <script>
-export default{
-  data(){
-    return{
-      methods:{
-
-      }
-
-         
-        }
-        
-      }
-
-    }
-  fetch('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15')
-.then(data => {
-  return data.json();
-})
-.then(data=>{
-  console.log(data);
-})
-  
-
-
-
+export default {
+  data() {
+    return {
+      methods: {
+        api: fetch(
+          "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15"
+        )
+          .then((data) => {
+            return data.json();
+          })
+          .then((data) => {
+            console.log(data);
+          }),
+      },
+    };
+  },
+};
 </script>
 
 <style>
-body{
+body {
   background-color: teal;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 2rem;
   font-weight: bold;
   justify-content: center;
