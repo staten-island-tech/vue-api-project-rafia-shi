@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <div class="test">API Project</div>
-    <div class="data-goes-here" v-for=" method in methods" :key="method">Data {{method.api}}</div>
+    <div class="test">crunchyvue</div>
+    <h1 class="logo"></h1>
+    <div class="data-goes-here" v-for=" method in methods" :key="method"> {{method.api}}</div>
   </div>
 </template>
 
@@ -11,7 +12,7 @@ export default {
     return {
       methods: {
         api: fetch(
-          "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15"
+          "https://anilist.co/api"
         )
           .then((data) => {
             return data.json();
@@ -27,10 +28,21 @@ export default {
 
 <style>
 body {
-  background-color: teal;
+  background-color: orange;
   font-family: "Courier New", Courier, monospace;
   font-size: 2rem;
   font-weight: bold;
   justify-content: center;
+}
+.test{
+  text-align: center;
+  background-color: white;
+  color: orange;
+  
+  padding: 1.3rem;
+ 
+}
+.logo{
+  background-image: url("./assets/Crunchyroll.png");
 }
 </style>
