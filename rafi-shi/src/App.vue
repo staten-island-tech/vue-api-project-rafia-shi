@@ -10,9 +10,7 @@ export default {
   data() {
     return {
       methods: {
-        api: fetch(
-          "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15"
-        )
+        api: fetch(" https://www.balldontlie.io/api/v1/players/1")
           .then((data) => {
             return data.json();
           })
