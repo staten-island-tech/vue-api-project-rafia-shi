@@ -2,7 +2,7 @@
   <div id="app">
     <div class="test">crunchyvue</div>
     <h1 class="logo"></h1>
-    <div class="data-goes-here" v-for=" method in methods" :key="method"> {{method.api}}</div>
+    <div class="data-goes-here" v-for=" method in methods" :key="method"> {methods}</div>
   </div>
 </template>
 
