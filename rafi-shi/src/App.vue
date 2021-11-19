@@ -9,17 +9,10 @@
 export default {
   data() {
     return {
-      methods: {
-        api: fetch(" https://www.balldontlie.io/api/v1/players/1")
-          .then((data) => {
-            return data.json();
-          })
-          .then((data) => {
-            console.log(data);
-          }),
-      },
+      datab: [],
     };
   },
+  methods: {},
 };
 </script>
 
