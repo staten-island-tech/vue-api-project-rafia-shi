@@ -13,7 +13,7 @@ export default {
       
     };
   },
-  name: "app",
+
  methods: {
         api: fetch(
           "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=10"
