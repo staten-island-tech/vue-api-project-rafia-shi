@@ -2,7 +2,7 @@
   <div id="app">
     <div class="test">crunchyvue</div>
     <h1 class="logo"></h1>
-    <div class="data-goes-here" v-for=" product in methods" :key="product">Hello {{product.api}}</div>
+    <div class="data-goes-here" v-for=" method in methods" :key="method">Hello {{method.api}}</div>
   </div>
 </template>
 
@@ -10,9 +10,13 @@
 export default {
   data() {
     return {
-      methods: {
+      
+    };
+  },
+  name: "app",
+ methods: {
         api: fetch(
-          "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15"
+          "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=10"
         )
           .then((data) => {
             return data.json();
@@ -20,12 +24,8 @@ export default {
           .then((data) => {
             console.log(data);
           }),
+          
       },
-    };
-  },
-  store: {
-    fatin: "fatin",
-  },
 };
 </script>
 
