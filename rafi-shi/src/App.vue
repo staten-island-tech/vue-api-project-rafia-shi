@@ -10,7 +10,11 @@
 export default {
   data() {
     return {
-      methods: {
+      
+    };
+  },
+
+ methods: {
         api: fetch(
           "https://anilist.co/api"
         )
@@ -20,6 +24,7 @@ export default {
           .then((data) => {
             console.log(data);
           }),
+          
       },
     };
   },
