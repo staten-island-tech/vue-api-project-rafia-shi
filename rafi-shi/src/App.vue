@@ -1,34 +1,37 @@
 <template>
   <div id="app">
-    <div class="test">crunchyvue</div>
+    <div class="test">Crunchyvue</div>
     <h1 class="logo"></h1>
-    <div class="data-goes-here" v-for=" method in methods" :key="method"> {methods}</div>
+    <div class="data-goes-here">
+      <button class="btn" @click="fetchData"> Click Me</button> 
+
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      
-    };
+    return{ 
+      datab:[]
+    
+    }
   },
+  methods: {
+fetchData() {
+   fetch("https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15")
+       .then((response) => {
+         if (response.ok) {
+            return response.json();
+         }
+       })
+       .then((data) => {
+         console.log(data);
+       }
+       )},
+  },
+}
 
- methods: {
-        api: fetch(
-          "https://anilist.co/api"
-        )
-          .then((data) => {
-            return data.json();
-          })
-          .then((data) => {
-            console.log(data);
-          }),
-          
-      },
-    };
-  },
-};
 </script>
 
 <style>
@@ -49,5 +52,11 @@ body {
 }
 .logo{
   background-image: url("./assets/Crunchyroll.png");
+}
+.btn{
+  border-radius: 1.5rem;
+  background-color: aquamarine;
+  text-align: center;
+  align-items: center;
 }
 </style>
