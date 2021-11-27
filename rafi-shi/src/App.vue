@@ -1,12 +1,23 @@
 <template>
   <div id="app">
     <div class="test">API Project</div>
-    <div class="data-goes-here" v-for=" method in methods" :key="method">Data {{method.apiCall}}</div>
+    <ul class="game-table">
+      <li class="game-list"
+       v-for="game in games" 
+       :key="game.title"
+       > 
+         {{game.title}}
+         fatin
+
+       </li>  
+  </ul>
+
+   
   </div>
 </template>
 
 <script>
-export default {
+/*export default {
   data() {
     return {
       datab: [],
@@ -28,7 +39,36 @@ export default {
       
     }
   
-};
+};*/
+
+
+export default {
+  name: "GameList",
+  data(){
+    return{
+      games: []
+    };
+  },
+  props:[],
+  created: function(){
+    this.fetchData();
+
+  },
+  methods: {
+    fetchData: async function () {
+      try {
+        const result = await fetch (`https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15`);
+        const data = await result.json();
+        console.log(data);
+        this.games = data.result;
+        
+      } catch (error) {
+        alert("Sorry, something went wrong! Contact Vinny Shi for help");
+        
+      }
+    }
+  }
+}
 </script>
 
 <style>
@@ -38,5 +78,9 @@ body {
   font-size: 2rem;
   font-weight: bold;
   justify-content: center;
+}
+.gameList{
+  background: white;
+  color: black;
 }
 </style>
