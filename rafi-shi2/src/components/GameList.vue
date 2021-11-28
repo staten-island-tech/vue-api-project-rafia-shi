@@ -1,86 +1,52 @@
 <template>
-  <div id="app">
-    <div class="test">API Project</div>
-    <ul class="game-table">
-      <li class="game-list"
-       v-for="game in games" 
-       :key="game.title"
-       > 
-         {{game.title}}
-
-       </li>  
-  </ul>
-
-   
+  <div>
+    <h1>TEST</h1>
+    <ul class="pokemon-table">
+      <li
+        class="pokemon-list-item"
+        v-for="pokemon in pokemons"
+        :key="pokemon.name"
+      >
+        {{ pokemon.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-/*export default {
-  data() {
-    return {
-      datab: [],
-    };
-  },
-  methods: {
-    apiCall: async function () {
-      try {
-        const response = await fetch ('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15')
-        const data = await response.json
-        console.log(data)
-        }
-           catch (error) {
-    console.log(error);
-    alert("Something went wrong");
-  }
-  this.apiCall.push(datab)
-        }
-      
-    }
-  
-};*/
-
-
 export default {
-  name: "GameList",
-  data(){
-    return{
-      games: []
-    };
+  name: "PkmnList",
+  data() {
+    return { pokemons: [] };
   },
-  props:[],
-  created: function(){
+  props: ["id", "offset"],
+  mounted: function() {
     this.fetchData();
-
   },
   methods: {
-    fetchData: async function () {
+    fetchData: async function() {
       try {
-        const result = await fetch (`https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15`);
+        const result = await fetch(
+          `https://pokeapi.co/api/v2/pokemon?limit=${this.id}&offset=${this.offset}`
+        );
         const data = await result.json();
         console.log(data);
-        this.games = data.results;
-        
+        this.pokemons = data.results;
       } catch (error) {
-        alert("Sorry, something went wrong! Contact Vinny Shi for help");
-        
+        alert(error);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
-body {
-  background-color: teal;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 2rem;
-  font-weight: bold;
-  justify-content: center;
+h1 {
+  font-size: 5rem;
+  color: white;
 }
-.gameList{
-  background: white;
-  color: black;
+li {
+  color: white;
 }
 </style>
 
