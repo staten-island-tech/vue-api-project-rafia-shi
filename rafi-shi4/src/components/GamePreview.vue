@@ -1,8 +1,15 @@
 <template>
-<div>
-    <div id = "query">
+<div> <router-link :to="gamePath" class="link">
+
+<div id = "query">
         {{game.title}}
-        <img :src="sprite" alt=""></div> 
+        <img :src="sprite" alt="">
+        </div> 
+
+
+
+     </router-link>
+
 
         </div>
   
@@ -25,7 +32,7 @@ mounted: function(){
 methods:{
     fetchData2: async function (){
         try {
-            const result = await fetch(`https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15${this.game.title}`);
+            const result = await fetch(`https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15${this.game.gameID}`);
             const singleGame = await result.json();
             this.singleGame = singleGame;
             
@@ -37,11 +44,14 @@ methods:{
 },
  computed:{
     sprite: function(){
-      return this.singleGame.thumb;
+      return `https://cdn.cloudflare.steamstatic.com//steam//apps//${this.game.steamAppID}//capsule_sm_120.jpg?t=1602794480`
+    }, 
+    gamePath: function(){
+        return `/game/${this.game.steamAppID}`;
     }
   }
 };
-
+//do .steamappid tomorrow 
 </script>
 
 <style>
@@ -50,6 +60,9 @@ methods:{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-decoration: none;
 }
-
+.link{
+    text-decoration: none;
+}
 </style> 
