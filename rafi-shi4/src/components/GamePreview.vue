@@ -1,12 +1,17 @@
 <template>
-<div>fatin </div>
+<div>
+    <div id = "query">
+        {{game.title}}
+        <img :src="sprite" alt=""></div> 
+
+        </div>
   
 </template>
 
 <script>
 export default {
 name: "GamePreview",
-props: ["game", "id", ],
+props: ["game" ],
 data(){
     return{
         singleGame:{}
@@ -20,7 +25,7 @@ mounted: function(){
 methods:{
     fetchData2: async function (){
         try {
-            const result = await fetch(`https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15`);
+            const result = await fetch(`https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15${this.game.title}`);
             const singleGame = await result.json();
             this.singleGame = singleGame;
             
@@ -29,11 +34,22 @@ methods:{
         }
     }
 
-}
+},
+ computed:{
+    sprite: function(){
+      return this.singleGame.thumb;
+    }
+  }
 };
 
 </script>
 
 <style>
+.query{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 </style> 

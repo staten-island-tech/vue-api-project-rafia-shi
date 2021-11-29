@@ -6,9 +6,6 @@
         class="game-list-item"
         v-for="game in games" :key="game.title" 
       >
-      <p class="api-data" > {{game.title}} </p>
-       <p class="price"> $ {{game.salePrice}}</p>
-       
 
 
       <GamePreview :game="game" /></div>
@@ -45,11 +42,6 @@ export default {
       }
     },
   },
-  computed:{
-    sprite: function(){
-      return this.games.thumb;
-    }
-  }
 };
 </script>
 
