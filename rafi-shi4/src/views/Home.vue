@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <GameList />
+    <GameList :id="5" :number="1"/>
   </div>
 </template>
 
