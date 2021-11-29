@@ -1,6 +1,8 @@
 <template>
-<!-- eslint-disable-next-line vue/max-attributes-per-line -->
-  <div >Hi</div>
+<div>
+
+</div>
+  
 </template>
 
 <script>

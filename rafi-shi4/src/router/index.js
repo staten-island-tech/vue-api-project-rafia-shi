@@ -11,10 +11,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/game/:id",
+    path: "/game/:steamAppID",
     name: "Game",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Game.vue"),
+    component: () => import("../views/Game.vue"),
   },
 ];
 
