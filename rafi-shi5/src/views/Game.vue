@@ -32,7 +32,7 @@ export default {
     fetchData2: async function () {
       try {
         const result = await fetch(
-          `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15${this.$route.params.steamAppID}`
+          `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15${this.$route.params.id}`
         );
         const singleGame = await result.json();
         this.singleGame = singleGame;
