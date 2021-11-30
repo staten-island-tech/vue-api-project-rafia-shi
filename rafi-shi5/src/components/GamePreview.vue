@@ -49,13 +49,15 @@ export default {
 
 <style>
 .query {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
+  margin-top: 2rem;
 }
 .link {
-  text-decoration: none;
+  color: whitesmoke;
+  text-decoration-line: none;
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  
+
+ 
 }
 </style>
