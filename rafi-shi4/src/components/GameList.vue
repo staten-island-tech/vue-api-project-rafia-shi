@@ -73,7 +73,7 @@ body {
   border-radius: 1.5rem;
   width: 15%;
   height: 4rem;
-  font-size: 1rem;
+  font-size: .5rem;
   background-color: tomato;
   padding: 0.5rem;
 }

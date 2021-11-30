@@ -56,6 +56,6 @@ export default {
   text-decoration: none;
 }
 .link {
-  text-decoration: none;
+ 
 }
 </style>
