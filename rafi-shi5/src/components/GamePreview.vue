@@ -3,7 +3,7 @@
     <router-link :to="gamePath" class="link">
       <div id="query">
         {{ game.title }}
-        <img :src="sprite" alt="" />
+        <img class="games" :src="sprite" alt="" />
       </div>
     </router-link>
   </div>
@@ -48,16 +48,26 @@ export default {
 </script>
 
 <style>
-.query {
-  margin-top: 2rem;
-}
+
 .link {
-  color: whitesmoke;
+  color:#b1b3c9;
   text-decoration-line: none;
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: "Courier New", Courier, monospace;
+  display: table-row-group;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
   
 
  
 }
+
+.games{
+  margin-top: .5rem;
+  height: 18.5rem;
+  width: 15rem;
+  
+}
 </style>
+

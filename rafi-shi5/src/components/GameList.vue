@@ -48,7 +48,7 @@ h1 {
   font-family: "Courier New", Courier, monospace;
   justify-content: center;
   background-color: #171a21;
-  color: whitesmoke;
+  color: Black;
   padding: 1.5rem;
   padding-bottom: 1.65rem;
   
@@ -73,16 +73,17 @@ body {
   
 }
 .game-list-item {
-  color: white;
+  color:navy;
   font-family: "Courier New", Courier, monospace;
   border-radius: 1.5rem;
   width: 25%;
-  height: 15rem;
+  height: 20rem;
   font-size: .5rem;
   background-color: #171a21;
   padding: 0.5rem;
   align-content: space-around;
   margin-bottom: 2rem;
+  padding-bottom: 2rem;
   
 
  
@@ -96,13 +97,11 @@ body {
   margin: 0.5rem;
 }
 img{
-  max-width: 6rem;
-  float: left;
-  margin-left: 2rem;
-  opacity: 70%;
-  
-  
+height: 5rem;
 
+
+  
+  
 }
 /*.test{
   text-align: center;
