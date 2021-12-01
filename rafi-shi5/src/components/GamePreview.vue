@@ -66,7 +66,7 @@ export default {
 .games{
   margin-top: .5rem;
   height: 18.5rem;
-  width: 15rem;
+  width: 80%;
   
 }
 </style>
