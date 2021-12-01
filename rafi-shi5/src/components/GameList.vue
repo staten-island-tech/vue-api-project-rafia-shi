@@ -33,7 +33,7 @@ export default {
         );
         const apiData = await result.json();
         this.games = apiData;
-        console.log(apiData);
+      
       } catch (error) {
         alert(error);
       }

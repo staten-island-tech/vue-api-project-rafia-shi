@@ -20,7 +20,7 @@ export default {
   },
   mounted: function () {
     this.fetchData2();
-    console.log(this.singleGame);
+  
   },
   methods: {
     fetchData2: async function () {

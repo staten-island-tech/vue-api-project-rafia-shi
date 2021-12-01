@@ -25,19 +25,24 @@ export default {
       dealRating: {},
     };
   },
-  mounted: function () {
+  beforeMount: function () {
     this.fetchData2();
+    console.log(this.$route.params.steamAppID)
   },
   methods: {
     fetchData2: async function () {
       try {
         const result = await fetch(
-          `https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15${this.$route.params.id}`
+          
+          `https://www.cheapshark.com/api/1.0/games?id=${this.$route.params.id}`
         );
         const singleGame = await result.json();
-        this.singleGame = singleGame;
-        this.score = singleGame.score;
-        this.dealRating = singleGame.dealRating;
+        this.singleGame = singleGame[0];
+        this.score = this.singleGame.score;
+        this.dealRating = this.singleGame.dealRating;
+          console.log(this.singleGame)
+        /* return [this.singleGame, this.score, this.dealRating] */
+      
       } catch (error) {
         console.log(error);
       }
