@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <div class="card">
-      <h2 class="name">{{ singleGame.title }}</h2>
+      <h2 class="name">{{ singleGame.external }}</h2>
       <img src="" alt="" />
       <h3 class=""></h3>
-      <ul>
-        <li v-for="score in score" :key="score" class="score">
-          <div>{{ score.metacriticScore }}</div>
+      <ul v-for="score in singleGame" :key="score" class="score">
+        <li >
+          <div>{{ score.external }}</div>
         </li>
-        <li v-for="deal in dealRating" :key="deal">
-          <div>{{ deal.dealRating }}/10</div>
+        <li v-for="deal in singleGame" :key="deal" class="price">
+          <div> Price ${{ deal.cheapest }}</div>
         </li>
       </ul>
     </div>
@@ -27,21 +27,20 @@ export default {
   },
   beforeMount: function () {
     this.fetchData2();
-    console.log(this.$route.params.steamAppID)
   },
   methods: {
     fetchData2: async function () {
       try {
         const result = await fetch(
           
-          `https://www.cheapshark.com/api/1.0/games?id=${this.$route.params.id}`
+          `https://www.cheapshark.com/api/1.0/games?steamAppID=${this.$route.params.steamAppID}`
         );
         const singleGame = await result.json();
-        this.singleGame = singleGame[0];
+        this.singleGame = singleGame;
+        console.log(singleGame)
         this.score = this.singleGame.score;
         this.dealRating = this.singleGame.dealRating;
-          console.log(this.singleGame)
-        /* return [this.singleGame, this.score, this.dealRating] */
+         return [this.singleGame, this.score, this.dealRating] 
       
       } catch (error) {
         console.log(error);

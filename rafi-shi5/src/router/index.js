@@ -11,7 +11,7 @@ const routes = [
     component: Home,
   },
   {
-    path: "/game/:gameID",
+    path: "/game/:steamAppID",
     name: "Game",
     component: () => import("../views/Game.vue"),
   },
