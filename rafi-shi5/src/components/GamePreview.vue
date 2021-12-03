@@ -20,7 +20,6 @@ export default {
   },
   mounted: function () {
     this.fetchData2();
-  
   },
   methods: {
     fetchData2: async function () {
@@ -48,9 +47,8 @@ export default {
 </script>
 
 <style>
-
 .link {
-  color:#b1b3c9;
+  color: #b1b3c9;
   text-decoration-line: none;
   font-size: 1rem;
   font-family: "Courier New", Courier, monospace;
@@ -58,16 +56,12 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  
-
- 
 }
 
-.games{
-  margin-top: .5rem;
+.games {
+  margin-top: 0.5rem;
   height: 18.5rem;
   width: 80%;
-  
 }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><img src="../assets/steamlogo.png" alt=""></div>
+    <div><img src="../assets/steamlogo.png" alt="" /></div>
     <h1>Welcome To Steam</h1>
     <div class="game-table">
       <div class="game-list-item" v-for="game in games" :key="game.title">
@@ -33,7 +33,6 @@ export default {
         );
         const apiData = await result.json();
         this.games = apiData;
-      
       } catch (error) {
         alert(error);
       }
@@ -51,9 +50,6 @@ h1 {
   color: Black;
   padding: 1.5rem;
   padding-bottom: 1.65rem;
-  
-  
-  
 }
 body {
   background-color: #040720;
@@ -70,23 +66,19 @@ body {
   margin: 0 auto;
   justify-content: space-between;
   vertical-align: middle;
-  
 }
 .game-list-item {
-  color:navy;
+  color: navy;
   font-family: "Courier New", Courier, monospace;
   border-radius: 1.5rem;
   width: 25%;
   height: 20rem;
-  font-size: .5rem;
+  font-size: 0.5rem;
   background-color: #171a21;
   padding: 0.5rem;
   align-content: space-around;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  
-
- 
 }
 .game-list-item:hover {
   transform: scale(1.1);
@@ -96,12 +88,8 @@ body {
 .price {
   margin: 0.5rem;
 }
-img{
-height: 5rem;
-
-
-  
-  
+img {
+  height: 5rem;
 }
 /*.test{
   text-align: center;
