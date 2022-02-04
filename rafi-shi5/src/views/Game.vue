@@ -13,7 +13,6 @@
         </li>
       </ul>
     </div>
-    <button class="btn" type="button">Add to cart</button>
   </div>
   
 </template>
@@ -59,12 +58,6 @@ export default {
   
   
 }
-.btn{
- background-color: #6fa720;
- padding: 1rem;
- font-size: 1rem;
- border-radius: 2px;
- font-family: ;
-}
+
 
 </style>
